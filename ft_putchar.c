@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 18:39:08 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 20:37:37 by shogura          ###   ########.fr       */
+/*   Created: 2022/04/06 22:06:22 by shogura           #+#    #+#             */
+/*   Updated: 2022/04/06 22:06:54 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *b, size_t len)
+void	ft_putchar(char c)
 {
-	char	*str;
-	size_t	i;
-
-	i = 0;
-	str = (char *)b;
-	while (i < len)
-		str[i++] = '\0';
+	write(1, &c, 1);
 	return ;
 }

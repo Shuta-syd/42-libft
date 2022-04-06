@@ -1,35 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 20:01:09 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 20:36:09 by shogura          ###   ########.fr       */
+/*   Created: 2022/04/06 22:24:53 by shogura           #+#    #+#             */
+/*   Updated: 2022/04/06 22:25:27 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	unsigned char	*str;
-	unsigned char	charset;
-	unsigned char	*tmp;
+	size_t	i;
 
-	if (c == 0)
-		return ((char *)str);
-	tmp = NULL;
-	str = (unsigned char *)s;
-	charset = (unsigned char)c;
-	while (*str)
+	i = 0;
+	while (src[i] != '\0')
 	{
-		if (*str == charset)
-			tmp = str;
-		str++;
+		dst[i] = src[i];
+		i++;
 	}
-	if (tmp)
-		return ((char *)tmp);
-	return (NULL);
+	dst[i] = '\0';
+	return (dst);
 }

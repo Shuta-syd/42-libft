@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:07:22 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 21:31:29 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/06 22:00:36 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static int	ft_get_digits(int num)
 	digits = 1;
 	while (num / 10 != 0)
 	{
-		num /= 0;
+		num /= 10;
 		digits++;
 	}
 	return (digits);
