@@ -1,6 +1,6 @@
 # libft
 ## 関数一覧
----Mandatory part
+### MANDATORY PART
 - `void	*ft_memset(void *b, int c, size_t len)`  
 メモリ領域bをlenバイト数cで埋める関数<br><br>
 - `void	ft_bzero(void *b, size_t len)`  
@@ -98,3 +98,5 @@ int型の数値nをchar型の数値に変換する関数<br><br>
 int型の数値nを標準出力する関数<br><br>
 - `void	ft_putnbr_fd(int n, int fd)`  
 int型の数値nをファイルディスクリプタfdに出力する関数<br><br>
+
+### BONUS PART
