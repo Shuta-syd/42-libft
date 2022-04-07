@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strchr_rev.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 22:07:50 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/07 22:48:30 by shogura          ###   ########.fr       */
+/*   Created: 2022/04/06 19:58:52 by shogura           #+#    #+#             */
+/*   Updated: 2022/04/07 22:15:59 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+char *ft_strchr_rev(const char *s, int c)
 {
-	size_t	i;
+	unsigned char *str;
+	unsigned char charset;
 
-	i = 0;
-	while (i < len && src[i])
+	str = (unsigned char *)s;
+	charset = (unsigned char)c;
+	while (*str)
 	{
-		dst[i] = src[i];
-		i++;
+		if (*str != charset)
+			return ((char *)str);
+		str++;
 	}
-	while (i < len)
-		dst[i++] = '\0';
-	return (dst);
+	if (c == 0)
+		return ((char *)str);
+	return (NULL);
 }

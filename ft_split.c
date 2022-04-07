@@ -5,95 +5,76 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 21:05:30 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/07 16:15:45 by shogura          ###   ########.fr       */
+/*   Created: 2022/04/07 18:13:47 by shogura           #+#    #+#             */
+/*   Updated: 2022/04/07 22:50:28 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-static int	ft_charcheck(char charset, char s)
-{
-	if (s == charset || s == '\0')
-		return (1);
-	return (0);
-}
 
-static size_t	ft_count_str(char const *s, char c)
+static size_t	count_num_str(char const *s, char deli)
 {
 	size_t	i;
-	size_t	str_len;
+	size_t	num_str;
 
 	i = 0;
-	str_len = 0;
+	num_str = 0;
 	while (s[i])
 	{
-		if (ft_charcheck(c, s[i]) == 0 && ft_charcheck(c, s[i + 1]) == 1)
-			str_len++;
-		i++;
+		if (s[i] != deli)
+		{
+			num_str++;
+			while (s[i] && s[i] != deli)
+				i++;
+		}
+		while (s[i] && s[i] == deli)
+			i++;
 	}
-	return (str_len);
+	return (num_str);
 }
 
-static char	**ft_memsecure(char **strs, char const *src, char c)
+static size_t	word_count(char const *src, char deli)
 {
-	int	i;
-	int	j;
-	int	len;
+	size_t	i;
 
 	i = 0;
-	j = 0;
-	while (src[i] != '\0')
+	while (src[i] && src[i] != deli)
+		i++;
+	return (i);
+}
+
+static char	**store_str(char **strs, char const *src, char deli)
+{
+	size_t	i;
+	size_t	len;
+
+	i = 0;
+	while (*src)
 	{
 		len = 0;
-		if (ft_charcheck(c, src[i]) == 1)
-			i++;
-		else
-		{
-			while (ft_charcheck(c, src[i + len]) == 0)
-				len++;
-			strs[j] = (char *)malloc(sizeof(char) * (len + 1));
-			ft_strncpy(strs[j], &src[i], len);
-			i += len;
-			j++;
-		}
+		src = ft_strchr_rev(src, deli);
+		if (src == NULL)
+			break;
+		len = word_count(src, deli);
+		strs[i] = ft_calloc(len, sizeof(char));
+		ft_strlcpy(strs[i], src, len + 1);
+		i++;
+		src += len;
 	}
+	strs[i] = NULL;
 	return (strs);
 }
 
-char	**ft_split(char const *s, char c)
+char **ft_split(char const *s, char c)
 {
 	char	**strs;
-	size_t	str_len;
+	size_t	num_str;
 
 	if (s == NULL)
 		return (NULL);
-	str_len = ft_count_str(s, c);
-	strs = (char **)malloc(sizeof(char *) * (str_len + 1));
-
-	if (str_len == 0)
-	{
-		strs[0] = (char *)malloc(sizeof(char) * 1);
-		strs[0] = "";
-	}
-	else
-	{
-		strs[str_len] = 0;
-		strs = ft_memsecure(strs, s, c);
-	}
-	return (strs);
+	num_str = count_num_str(s, c);
+	strs = (char **)malloc(sizeof(char *) * (num_str + 1));
+	if (strs == NULL)
+		return (NULL);
+	return (store_str(strs, s, c));
 }
-
-
-int main(void)
-{
-	char **expected = ft_split("\0aa\0bbb", '\0');
-
-	//for (int i = 0; expected[i]; i++)
-	//{
-	//	printf("%s", expected[i]);
-	//}
-	return 0;
-}
-
-//+++hello++follew++good+

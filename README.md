@@ -1,5 +1,6 @@
 # libft
 ## 関数一覧
+---Mandatory part
 - `void	*ft_memset(void *b, int c, size_t len)`  
 メモリ領域bをlenバイト数cで埋める関数<br><br>
 - `void	ft_bzero(void *b, size_t len)`  
@@ -37,6 +38,8 @@ dstsize - strlen(dst) - 1のバイト数分のみ文字列dstの末尾に文字�
 dst の初期値 + src の長さを返す<br><br>
 - `char	*ft_strchr(const char *s, int c)`  
 文字列s中に最初に文字cが現れた位置へのポインターを求める関数<br><br>
+- `char *ft_strchr_rev(const char *s, int c)`  
+文字列s中に最初に文字cでない文字が現れた位置へのポインターを求める関数<br><br>
 - `char	*ft_strrchr(const char *s, int c)`  
 文字列s中に最後に文字cが現れた位置へのポインターを求める関数<br><br>
 - `char	*ft_strstr(const char *haystack, const char *needle)`  

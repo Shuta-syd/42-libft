@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:21:13 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/07 17:36:30 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/07 22:16:07 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,5 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
+char	*ft_strchr_rev(const char *s, int c);
 #endif
