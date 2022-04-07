@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:39:08 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 22:16:08 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/07 15:50:52 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,6 @@
 
 void	ft_bzero(void *b, size_t len)
 {
-	char	*str;
-	size_t	i;
-
-	i = 0;
-	str = (char *)b;
-	while (i < len)
-		str[i++] = '\0';
+	ft_memset(b, 0, len);
 	return ;
 }

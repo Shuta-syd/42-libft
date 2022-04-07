@@ -6,12 +6,12 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:05:30 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 21:06:32 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/07 16:15:45 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 static int	ft_charcheck(char charset, char s)
 {
 	if (s == charset || s == '\0')
@@ -19,14 +19,14 @@ static int	ft_charcheck(char charset, char s)
 	return (0);
 }
 
-static int	ft_count_str(char const *s, char c)
+static size_t	ft_count_str(char const *s, char c)
 {
-	int	i;
-	int	str_len;
+	size_t	i;
+	size_t	str_len;
 
 	i = 0;
 	str_len = 0;
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		if (ft_charcheck(c, s[i]) == 0 && ft_charcheck(c, s[i + 1]) == 1)
 			str_len++;
@@ -64,12 +64,13 @@ static char	**ft_memsecure(char **strs, char const *src, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**strs;
-	int		str_len;
+	size_t	str_len;
 
 	if (s == NULL)
 		return (NULL);
 	str_len = ft_count_str(s, c);
 	strs = (char **)malloc(sizeof(char *) * (str_len + 1));
+
 	if (str_len == 0)
 	{
 		strs[0] = (char *)malloc(sizeof(char) * 1);
@@ -82,3 +83,17 @@ char	**ft_split(char const *s, char c)
 	}
 	return (strs);
 }
+
+
+int main(void)
+{
+	char **expected = ft_split("\0aa\0bbb", '\0');
+
+	//for (int i = 0; expected[i]; i++)
+	//{
+	//	printf("%s", expected[i]);
+	//}
+	return 0;
+}
+
+//+++hello++follew++good+
