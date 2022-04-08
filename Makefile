@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/07 15:22:14 by shogura           #+#    #+#              #
-#    Updated: 2022/04/07 22:22:17 by shogura          ###   ########.fr        #
+#    Updated: 2022/04/08 10:38:07 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ CC = gcc
 
 CFLAGS = -Wall -Wextra -Werror
 
-all: ${NAME} clean
+all: ${NAME} 
 
 ${NAME}: ${OBJS}
 	ar cr $@ ${OBJS}

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:40:43 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 20:42:10 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/08 10:33:44 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,11 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*new_s;
 	size_t	len;
-	int		i;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
-	i = 0;
 	len = ft_strlen(s1) + ft_strlen(s2);
-	new_s = (char *)malloc(sizeof(char) * (len + 1));
+	new_s = ft_calloc(len + 1, sizeof(char));
 	if (new_s == NULL)
 		return (NULL);
 	ft_bzero(new_s, len + 1);

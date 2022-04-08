@@ -1,24 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 20:30:50 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/08 10:55:51 by shogura          ###   ########.fr       */
+/*   Created: 2022/04/08 10:58:30 by shogura           #+#    #+#             */
+/*   Updated: 2022/04/08 10:58:39 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+#include "libft.h"
 
-void	*ft_calloc(size_t count, size_t size)
-{
-	void	*mem;
-
-	mem = (void *)malloc(size * count);
-	if (mem == NULL)
-		return (NULL);
-	ft_bzero(mem, count * size);
-	return (mem);
-}

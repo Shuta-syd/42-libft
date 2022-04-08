@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 18:13:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/07 22:50:28 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/08 10:57:38 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static char	**store_str(char **strs, char const *src, char deli)
 		len = 0;
 		src = ft_strchr_rev(src, deli);
 		if (src == NULL)
-			break;
+			break ;
 		len = word_count(src, deli);
 		strs[i] = ft_calloc(len, sizeof(char));
 		ft_strlcpy(strs[i], src, len + 1);
@@ -65,7 +65,7 @@ static char	**store_str(char **strs, char const *src, char deli)
 	return (strs);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 	size_t	num_str;
