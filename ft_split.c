@@ -6,11 +6,18 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 18:13:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/08 19:28:31 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/08 23:15:10 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+static void	free_all(char **strs)
+{
+	while (*strs)
+		free(*strs++);
+	return;
+}
 
 static size_t	count_num_str(char const *s, char deli)
 {
@@ -51,12 +58,16 @@ static char	**store_str(char **strs, char const *src, char deli)
 	i = 0;
 	while (*src)
 	{
-		len = 0;
 		src = ft_strchr_rev(src, deli);
 		if (src == NULL)
 			break ;
 		len = word_count(src, deli);
 		strs[i] = ft_calloc(len, sizeof(char));
+		if (strs[i] == NULL)
+		{
+			free_all(strs);
+			return (NULL);
+		}
 		ft_strlcpy(strs[i], src, len + 1);
 		i++;
 		src += len;

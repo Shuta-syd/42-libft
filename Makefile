@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/07 15:22:14 by shogura           #+#    #+#              #
-#    Updated: 2022/04/08 17:44:41 by shogura          ###   ########.fr        #
+#    Updated: 2022/04/08 23:32:22 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,13 +36,13 @@ CFLAGS = -Wall -Wextra -Werror
 all: ${NAME}
 
 ${NAME}: ${OBJS}
-	ar cr $@ ${OBJS}
+	ar cr $@ $^
 
 .o:.c
 	${CC} ${CFLAGS} -c $< $@
 
-bonus: ${BONUS_OBJS}
-	ar cr ${NAME} ${BONUS_OBJS}
+bonus: ${BONUS_OBJS} ${OBJS}
+	ar cr ${NAME} $^
 
 xx:
 	${CC} ${SRCS}
