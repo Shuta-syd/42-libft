@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:21:13 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/07 22:16:07 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/08 14:47:47 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@
 typedef struct s_list
 {
 	void			*content;
-	size_t			content_size;
 	struct s_list	*next;
 }	t_list;
 void	*ft_memset(void *b, int c, size_t len);
@@ -70,4 +69,13 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_strchr_rev(const char *s, int c);
+t_list	*ft_lstnew(void const *content);
+void	ft_lstadd_front(t_list **lst, t_list *new);
+int		ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstdelone(t_list *lst, void (*del)(void *));
+void	ft_lstclear(t_list **lst, void (*del)(void *));
+void	ft_lstiter(t_list *lst, void (*f)(void *));
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 #endif

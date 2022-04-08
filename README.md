@@ -100,3 +100,25 @@ int型の数値nを標準出力する関数<br><br>
 int型の数値nをファイルディスクリプタfdに出力する関数<br><br>
 
 ### BONUS PART
+- `t_list	*ft_lstnew(void const *content)`  
+メンバを初期化したt_listを返す関数<br><br>
+- `void	ft_lstadd_front(t_list **lst, t_list *new)`  
+メンバを初期化したt_listを返す関数<br><br>
+- `void	ft_lstadd_front(t_list **lst, t_list *new)`  
+lstの先頭にnewを追加する関数<br><br>
+- `int	ft_lstsize(t_list *lst)`  
+lstに含まれるサイズを求める関数<br><br>
+- `t_list	*ft_lstlast(t_list *lst)`  
+lst最後のlistを返す関数<br><br>
+- `void	ft_lstadd_back(t_list **lst, t_list *new)`  
+lstの最後のlistにnewを追加する関数<br><br>
+- `void	ft_lstdelone(t_list *lst, void (*del)(void *))`  
+del()およびfree(3)を用いてlstのメモリを解放する関数  
+lstのメンバnextは解放してはならない<br><br>
+- `void	ft_lstclear(t_list **lst, void (*del)(void *))`  
+del()およびfree(3)を用いてlstの全メモリを解放する関数  
+すべてのlstはNULLで初期化される<br><br>
+- `void	ft_lstiter(t_list *lst, void (*f)(void *))`  
+lstのメンバ各contentにf()を適用する関数<br><br>
+- `t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))`  
+f()を適用した新しいlistを返す関数<br><br>
