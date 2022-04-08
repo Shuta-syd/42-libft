@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 14:44:50 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/08 17:35:33 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/08 17:46:49 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	{
 		tmp = ft_lstnew(f(lst->content));
 		if (tmp == NULL)
-			{
-				ft_lstclear(&newlst, del);
-				return (NULL);
-			}
+		{
+			ft_lstclear(&newlst, del);
+			return (NULL);
+		}
 		ft_lstadd_back(&newlst, tmp);
 		lst = lst->next;
 	}
