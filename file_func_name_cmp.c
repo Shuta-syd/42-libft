@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   filename_cmp.c                                     :+:      :+:    :+:   */
+/*   file_func_name_cmp.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 19:14:29 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/08 20:20:55 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/08 20:43:58 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,14 @@ int main()
 			"ft_putstr_fd.c",
 			"ft_putendl_fd.c",
 			"ft_putnbr_fd.c",
-			"ft_lstnew_bonus.c",
-			"ft_lstadd_front_bonus.c",
-			"ft_lstsize_bonus.c",
-			"ft_lstadd_back_bonus.c",
-			"ft_lstdelone_bonus.c",
-			"ft_lstclear_bonus.c",
-			"ft_lstiter_bonus.c",
-			"ft_lstmap_bonus.c",
+			"ft_lstnew.c",
+			"ft_lstadd_front.c",
+			"ft_lstsize.c",
+			"ft_lstadd_back.c",
+			"ft_lstdelone.c",
+			"ft_lstclear.c",
+			"ft_lstiter.c",
+			"ft_lstmap.c",
 	};
 
 	char func_name[][100] = {
