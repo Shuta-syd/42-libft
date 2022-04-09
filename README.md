@@ -122,5 +122,3 @@ del()およびfree(3)を用いてlstの全メモリを解放する関数
 lstのメンバ各contentにf()を適用する関数<br><br>
 - `t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))`  
 f()を適用した新しいlistを返す関数<br><br>
-
-ft_split callocエラーチェック 
