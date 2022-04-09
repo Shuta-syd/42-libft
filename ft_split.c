@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 18:13:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/08 23:15:10 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 13:38:53 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	free_all(char **strs)
 {
 	while (*strs)
 		free(*strs++);
-	return;
+	return ;
 }
 
 static size_t	count_num_str(char const *s, char deli)

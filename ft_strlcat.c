@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:53:46 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 19:57:28 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 12:49:03 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t	i;
-	size_t	size;
+	long	i;
+	long	size;
 	size_t	dst_len;
 	size_t	src_len;
 

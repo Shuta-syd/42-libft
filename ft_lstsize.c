@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 13:26:19 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/08 13:58:00 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 13:14:44 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	t_list	*tmp;
 	int		len;
 
 	len = 0;
-	tmp = lst;
-	while (tmp)
+	while (lst)
 	{
-		tmp = tmp->next;
+		lst = lst->next;
 		len++;
 	}
 	return (len);

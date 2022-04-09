@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:27:40 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 20:30:09 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 12:06:47 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	ft_atoi(const char *str)
 		num = 10 * num + (str[i] - '0');
 		if (num > LONG_MAX && minus == 1)
 			return (-1);
-		else if (num > LONG_MAX && minus == -1)
+		else if (num > LONG_MIN && minus == -1)
 			return (0);
 		i++;
 	}

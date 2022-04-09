@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 14:23:40 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/08 15:45:49 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 13:38:01 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
+	t_list	*tmp;
+
 	if (lst == NULL || del == NULL)
 		return ;
 	while (*lst)
 	{
+		tmp = (*lst)->next;
 		ft_lstdelone((*lst), del);
-		*lst = (*lst)->next;
+		*lst = tmp;
 	}
 	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:13:58 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/08 10:51:15 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 13:00:21 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 	size_t	size;
 	size_t	len;
 
-	if (n == 0 || *needle == '\0')
+	if (*needle == '\0')
 		return ((char *)haystack);
 	while (*haystack && n > 0)
 	{
