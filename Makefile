@@ -6,7 +6,7 @@
 #    By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/07 15:22:14 by shogura           #+#    #+#              #
-#    Updated: 2022/04/09 13:49:02 by shogura          ###   ########.fr        #
+#    Updated: 2022/04/09 13:52:11 by shogura          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,7 +58,7 @@ nr: ${SRCS} ${BONUS}
 	${NR} $^
 
 clean:
-	rm -f ${OBJS} ${BONUS_OBJS}
+	rm -f ${OBJS_M} ${OBJS_B}
 
 fclean: clean
 	rm -rf ${NAME}
