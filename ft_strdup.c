@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:32:37 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 20:34:29 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 17:08:26 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strdup(const char *s1)
 {
-	int		i;
-	int		len;
+	size_t	i;
+	size_t	len;
 	char	*str;
 
 	i = 0;

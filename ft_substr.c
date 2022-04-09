@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:34:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/09 13:03:52 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 17:52:22 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= s_len)
 		sub = (char *)malloc(sizeof(char) * 1);
 	else
-		sub = (char *)malloc(sizeof(char) * ((s_len - start) + 1));
+	{
+		if (len > ft_strlen(s + start))
+			len = ft_strlen(s + start);
+		sub = (char *)malloc(sizeof(char) * (len + 1));
+	}
 	if (sub == NULL)
 		return (NULL);
 	while (i < len && s[start] && start < s_len)

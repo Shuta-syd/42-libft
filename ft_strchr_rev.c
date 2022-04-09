@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:58:52 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/08 10:57:53 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 17:04:06 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,5 @@ char	*ft_strchr_rev(const char *s, int c)
 			return ((char *)str);
 		str++;
 	}
-	if (c == 0)
-		return ((char *)str);
 	return (NULL);
 }

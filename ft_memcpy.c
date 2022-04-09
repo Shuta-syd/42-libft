@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:40:48 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 21:23:41 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 16:56:50 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	unsigned char	*dst_cp;
 	unsigned char	*src_cp;
 
-	if (dst == src)
+	if (dst == src || n == 0)
 		return (dst);
 	dst_cp = (unsigned char *)dst;
 	src_cp = (unsigned char *)src;

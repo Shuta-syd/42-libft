@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 21:32:12 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 21:34:17 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/09 17:10:58 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	char			*new_s;
-	unsigned int	i;
+	char	*new_s;
+	size_t	i;
 
 	i = 0;
 	if (s == NULL || f == NULL)
@@ -24,7 +24,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (new_s == NULL)
 		return (NULL);
 	ft_bzero(new_s, ft_strlen(s) + 1);
-	while (s[i] != '\0')
+	while (s[i])
 	{
 		new_s[i] = f(i, s[i]);
 		i++;
