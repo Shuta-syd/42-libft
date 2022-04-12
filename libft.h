@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:21:13 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/08 14:47:47 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/12 23:52:57 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
+# include <stddef.h>
 # define LONG_MAX 9223372036854775807
 # define LONG_MIN -9223372036854775808UL
 typedef struct s_list

@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:31:22 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/06 20:36:24 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/12 22:34:31 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (*s++)
+	while (s[len])
 		len++;
 	return (len);
 }
