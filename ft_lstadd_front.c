@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 13:13:25 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/09 13:39:06 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/13 16:47:14 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,8 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 
 	if (lst == NULL || new == NULL)
 		return ;
-	if (*lst == NULL)
-	{
-		*lst = new;
-		return ;
-	}
 	tmp = *lst;
+	new->next = tmp;
 	*lst = new;
-	ft_lstadd_back(lst, tmp);
 	return ;
 }

@@ -6,17 +6,24 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:27:40 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/09 12:06:47 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/13 12:02:04 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static int	ft_overflow(int minus)
+{
+	if (minus > 0)
+		return ((int)LONG_MAX);
+	return ((int)LONG_MIN);
+}
+
 int	ft_atoi(const char *str)
 {
 	int				i;
 	int				minus;
-	unsigned long	num;
+	long long		num;
 
 	i = 0;
 	num = 0;
@@ -32,10 +39,8 @@ int	ft_atoi(const char *str)
 	while ('0' <= str[i] && str[i] <= '9')
 	{
 		num = 10 * num + (str[i] - '0');
-		if (num > LONG_MAX && minus == 1)
-			return (-1);
-		else if (num > LONG_MIN && minus == -1)
-			return (0);
+		if (num < 0)
+			return (ft_overflow(minus));
 		i++;
 	}
 	return ((int)num * minus);

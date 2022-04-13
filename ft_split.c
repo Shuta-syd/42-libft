@@ -6,36 +6,43 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 18:13:47 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/09 13:38:53 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/13 16:53:52 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	free_all(char **strs)
+static char	*ft_strchr_rev(const char *s, int c)
 {
-	while (*strs)
-		free(*strs++);
-	return ;
+	unsigned char	*str;
+	unsigned char	charset;
+
+	str = (unsigned char *)s;
+	charset = (unsigned char)c;
+	while (*str)
+	{
+		if (*str != charset)
+			return ((char *)str);
+		str++;
+	}
+	return (NULL);
 }
 
 static size_t	count_num_str(char const *s, char deli)
 {
-	size_t	i;
 	size_t	num_str;
 
-	i = 0;
 	num_str = 0;
-	while (s[i])
+	while (*s)
 	{
-		if (s[i] != deli)
+		if (*s != deli)
 		{
 			num_str++;
-			while (s[i] && s[i] != deli)
-				i++;
+			while (*s != deli && *s != '\0')
+				s++;
 		}
-		while (s[i] && s[i] == deli)
-			i++;
+		else
+			s++;
 	}
 	return (num_str);
 }
@@ -62,10 +69,13 @@ static char	**store_str(char **strs, char const *src, char deli)
 		if (src == NULL)
 			break ;
 		len = word_count(src, deli);
-		strs[i] = ft_calloc(len, sizeof(char));
+		strs[i] = ft_calloc(len + 1, sizeof(char));
 		if (strs[i] == NULL)
 		{
-			free_all(strs);
+			i = 0;
+			while (strs[i])
+				free(strs[i++]);
+			free(strs);
 			return (NULL);
 		}
 		ft_strlcpy(strs[i], src, len + 1);
