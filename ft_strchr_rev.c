@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:58:52 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/09 17:04:06 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/14 20:52:27 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 char	*ft_strchr_rev(const char *s, int c)
 {
-	unsigned char	*str;
-	unsigned char	charset;
+	char	charset;
 
-	str = (unsigned char *)s;
-	charset = (unsigned char)c;
-	while (*str)
+	charset = (char)c;
+	while (*s)
 	{
-		if (*str != charset)
-			return ((char *)str);
-		str++;
+		if (*s != charset)
+			return ((char *)s);
+		s++;
 	}
 	return (NULL);
 }

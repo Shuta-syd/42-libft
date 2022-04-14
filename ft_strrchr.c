@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:01:09 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/13 00:16:42 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/14 20:56:52 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,20 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	unsigned char	*str;
-	unsigned char	charset;
-	unsigned char	*tmp;
+	char	charset;
+	char	*tmp;
 
 	tmp = NULL;
-	str = (unsigned char *)s;
-	charset = (unsigned char)c;
-	while (*str)
+	charset = (char)c;
+	while (*s)
 	{
-		if (*str == charset)
-			tmp = str;
-		str++;
+		if (*s == charset)
+			tmp = (char *)s;
+		s++;
 	}
 	if (tmp)
 		return ((char *)tmp);
 	else if (c == 0)
-		return ((char *)str);
+		return ((char *)s);
 	return (NULL);
 }

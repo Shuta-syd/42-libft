@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 19:58:52 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/14 20:51:56 by shogura          ###   ########.fr       */
+/*   Created: 2022/04/14 20:54:55 by shogura           #+#    #+#             */
+/*   Updated: 2022/04/14 20:55:11 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strnlen(char *dst, size_t maxlen)
 {
-	char	charset;
+	size_t	len;
 
-	charset = (char)c;
-	while (*s)
-	{
-		if (*s == charset)
-			return ((char *)s);
-		s++;
-	}
-	if (c == 0)
-		return ((char *)s);
-	return (NULL);
+	len = 0;
+	while (len < maxlen && dst[len])
+		len++;
+	return (len);
 }

@@ -6,30 +6,41 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:53:46 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/09 12:49:03 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/14 20:56:37 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include	"libft.h"
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/04/06 19:53:46 by shogura           #+#    #+#             */
+/*   Updated: 2022/04/14 20:50:26 by shogura          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	long	i;
-	long	size;
-	size_t	dst_len;
-	size_t	src_len;
+	size_t	i;
+	size_t	size;
+	size_t	dstlen;
 
 	i = 0;
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	size = dstsize - (dst_len + 1);
-	if (dstsize < dst_len)
-		return (src_len + dstsize);
+	dstlen = 0;
+	size = ft_strnlen(dst, dstsize);
+	if (size == dstsize)
+		return (ft_strlen(src) + dstsize);
+	size = dstsize - (size + 1);
+	dstlen = ft_strlen(dst);
 	while (i < size && src[i])
 	{
-		dst[dst_len + i] = src[i];
+		dst[dstlen + i] = src[i];
 		i++;
 	}
-	dst[dst_len + i] = '\0';
-	return (dst_len + src_len);
+	dst[dstlen + i] = '\0';
+	return (dstlen + ft_strlen(src));
 }
