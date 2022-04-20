@@ -6,28 +6,27 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:53:46 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/14 20:56:37 by shogura          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 19:53:46 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/14 20:50:26 by shogura          ###   ########.fr       */
+/*   Updated: 2022/04/20 11:31:49 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+static size_t ft_strnlen(char *dst, size_t maxlen)
 {
-	size_t	i;
-	size_t	size;
-	size_t	dstlen;
+	size_t len;
+
+	len = 0;
+	while (len < maxlen && dst[len])
+		len++;
+	return (len);
+}
+
+size_t ft_strlcat(char *dst, const char *src, size_t dstsize)
+{
+	size_t i;
+	size_t size;
+	size_t dstlen;
 
 	i = 0;
 	dstlen = 0;
