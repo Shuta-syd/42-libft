@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 18:21:13 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/14 20:55:22 by shogura          ###   ########.fr       */
+/*   Updated: 2022/05/09 16:02:32 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stddef.h>
-# define LONG_MAX 9223372036854775807
-# define LONG_MIN -9223372036854775808UL
+# include <limits.h>
 typedef struct s_list
 {
 	void			*content;

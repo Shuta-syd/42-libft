@@ -6,13 +6,13 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 19:53:46 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/20 11:31:49 by shogura          ###   ########.fr       */
+/*   Updated: 2022/05/09 16:02:19 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t ft_strnlen(char *dst, size_t maxlen)
+size_t ft_strnlen(char *dst, size_t maxlen)
 {
 	size_t len;
 
