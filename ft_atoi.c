@@ -6,7 +6,7 @@
 /*   By: shogura <shogura@student.42tokyo.jp>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/06 20:27:40 by shogura           #+#    #+#             */
-/*   Updated: 2022/04/18 23:22:29 by shogura          ###   ########.fr       */
+/*   Updated: 2022/05/12 12:49:35 by shogura          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_atoi(const char *str)
 	while ('0' <= str[i] && str[i] <= '9')
 	{
 		num = 10 * num + (str[i] - '0');
-		if (num < 0)
+		if (num > LLONG_MAX / num)
 			return (ft_overflow(minus));
 		i++;
 	}
